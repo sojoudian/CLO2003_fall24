@@ -10,9 +10,9 @@ echo "# CLO2003_fall24" >> README.md\
      open -a Visual\ Studio\ Code . \
      Code . \
 git init \
-# echo $SHELL \
+```bash # echo $SHELL ```
 git add README.md \
-# git add . \
+```bash # git add . ```
 git commit -m "first commit" \
 git branch -M master \
 git remote add origin https://github.com/sojoudian/CLO2003_fall24.git \
