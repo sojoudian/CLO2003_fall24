@@ -17,7 +17,7 @@ This is a simple Go API server that supports both GET and POST requests. The ser
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/go-api-server.git
+git clone https://github.com/sojoudian/go-api-server.git
 cd go-api-server
 ```
 
