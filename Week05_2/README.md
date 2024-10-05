@@ -1,5 +1,5 @@
 
-# Go API Server
+# Go API Server with GET/POST
 
 This is a simple Go API server that supports both GET and POST requests. The server allows the user to specify the port number via a command-line argument.
 
