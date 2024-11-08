@@ -12,5 +12,15 @@ go run main.go
 ```bash
 git pull
 docker build -t cloud_portfolio:0.1 .
+```
+
+## How to run the Cloud Engineer Portfolio Docker image
+```bash
 docker run -p 80:80 cloud_portfolio:0.1
+```
+# how to push the image to the docker hub
+```bash
+docker login
+docker tag cloud_portfolio:0.1 maziar/cloud_portfolio:0.1
+docker push maziar/cloud_portfolio:0.1
 ```
