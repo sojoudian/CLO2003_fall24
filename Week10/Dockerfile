@@ -1,3 +1,4 @@
+#single stage dockerfile
 FROM golang:1.23
 
 WORKDIR /app
