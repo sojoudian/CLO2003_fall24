@@ -24,3 +24,11 @@ docker login
 docker tag cloud_portfolio:0.1 maziar/cloud_portfolio:0.1
 docker push maziar/cloud_portfolio:0.1
 ```
+## Build for all UNIX like Operating Systems
+
+```bash
+docker buildx build --platform linux/amd64,linux/arm64,windows/amd64,linux/arm/v7 -t maziar/myapp:latest --push .
+````
+
+
+
