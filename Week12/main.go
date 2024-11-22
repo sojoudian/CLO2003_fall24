@@ -1,11 +1,17 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"log"
 	"net/http"
 	"time"
+
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
+
+var mongoClient *mongo.Client
 
 func enableCros(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Origin", "*")
@@ -25,10 +31,18 @@ func saveIPHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	currentTime := time.Now().Format("2006-01-02 15:04:05`")
 	data["time"] = currentTime
-
+	collectio := mongoClient.Database("userData").Collection("IPs")
+	_, err = collectio.InsertOne(context.TODO(), data)
+	if err != nil {
+		http.Error(w, "Error saving data to MongoDB", http.StatusInternalServerError)
+	}
 }
 func main() {
-
+	var err error
+	mongoClient, err = mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb://localhost:27017"))
+	if err != nil {
+		log.Fatal(err)
+	}
 	fs := http.FileServer(http.Dir("./templates"))
 	http.Handle("/", fs)
 	http.HandleFunc("/api/saveIP", saveIPHandler)
