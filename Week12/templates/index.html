@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <!-- Meta tags for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!-- CSS styles -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #6C63FF;
+            padding: 50px 0;
+            text-align: center;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: 700;
+        }
+        nav {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            margin: 0 20px;
+            color: #6C63FF;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+        .section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #6C63FF;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project-card {
+            background-color: #fff;
+            width: 30%;
+            margin: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: left;
+        }
+        .project-card img {
+            width: 100%;
+            height: auto;
+        }
+        .project-card h3 {
+            margin: 15px;
+            font-size: 24px;
+        }
+        .project-card p {
+            margin: 0 15px 15px;
+            font-size: 16px;
+            color: #666;
+        }
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .contact a {
+            color: #6C63FF;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        footer {
+            background-color: #6C63FF;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+        @media (max-width: 992px) {
+            .project-card {
+                width: 45%;
+            }
+        }
+        @media (max-width: 768px) {
+            .project-card {
+                width: 100%;
+            }
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <section class="section about" id="about">
+            <h2>About Me</h2>
+            <p>
+                Welcome! I'm a passionate developer specializing in creating dynamic and beautiful web experiences. I love coding and am always eager to learn new technologies.
+            </p>
+        </section>
+
+        <section class="section projects" id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="Project 1">
+                    <h3>Project One</h3>
+                    <p>An exciting project that showcases my skills in frontend development.</p>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="Project 2">
+                    <h3>Project Two</h3>
+                    <p>A web application developed using the latest backend technologies.</p>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="Project 3">
+                    <h3>Project Three</h3>
+                    <p>A mobile-responsive website designed with user experience in mind.</p>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                I'm open to collaborations and opportunities. Feel free to reach out!
+            </p>
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">Your Profile</a></p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 My Portfolio</p>
+    </footer>
+
+</body>
+</html>
+
