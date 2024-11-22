@@ -23,18 +23,21 @@ func saveIPHandler(w http.ResponseWriter, r *http.Request) {
 	enableCros(&w)
 	if r.Method != "POST" {
 		http.Error(w, "Only POST method is allowed!", http.StatusMethodNotAllowed)
+		return
 	}
 	var data map[string]interface{}
 	err := json.NewDecoder(r.Body).Decode(&data)
 	if err != nil {
 		http.Error(w, "Error parsing the JSON request!", http.StatusBadRequest)
+		return
 	}
-	currentTime := time.Now().Format("2006-01-02 15:04:05`")
+	currentTime := time.Now().Format("2006-01-02 15:04:05")
 	data["time"] = currentTime
-	collectio := mongoClient.Database("userData").Collection("IPs")
-	_, err = collectio.InsertOne(context.TODO(), data)
+	collection := mongoClient.Database("userData").Collection("IPs")
+	_, err = collection.InsertOne(context.TODO(), data)
 	if err != nil {
 		http.Error(w, "Error saving data to MongoDB", http.StatusInternalServerError)
+		return
 	}
 }
 func main() {
