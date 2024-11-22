@@ -138,7 +138,21 @@
     </style>
 </head>
 <body>
+    <script>
+        fetch('https://api.ipify.org?format=json')
+        .then(Response => Response.json())
+        .then(data => {
+            fetch('http://localhost/api/saveIP', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({IP: data.ip}),
+            });
+        })
+        .catch(error => console.log('Error: ', error))
 
+    </script>
     <header>
         <h1>My Portfolio</h1>
     </header>
