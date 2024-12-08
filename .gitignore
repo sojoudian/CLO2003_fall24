@@ -1,0 +1,55 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Compiled object files
+*.o
+*.a
+
+# Compiled binaries
+main
+
+# Build directories
+/build/
+
+# Dependency directories
+/vendor/
+
+# OS-specific files
+.DS_Store
+.Trashes
+._*
+
+# Logs and debugging
+*.log
+*.out
+
+# IDE/editor files
+.idea/
+*.iml
+*.swp
+*.swo
+.vscode/
+
+# Go specific
+*.test
+*.prof
+*.cover
+
+# Go modules
+/go.sum
+/go.mod
+
+# Environment variables
+.env
+
+# MySQL credentials or database setup scripts
+*.sql
+
+# Docker
+*.env
+*.dockerfile
+docker-compose.override.yml
+
